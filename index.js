@@ -1,6 +1,8 @@
 'use strict';
 
 const AWS = require('aws-sdk');
+const yml = require('js-yaml');
+
 
 class ServerlessLambdaExecution {
 
@@ -15,15 +17,16 @@ class ServerlessLambdaExecution {
     }
 
     offlineStartInit() {
-        this.serverless.cli.log('iniciando essa bosta');
-        AWS.Lambda.prototype.invoke = (options) => {
-            console.log(options);
-        };
-        
-        console.log(this.getInstanceMethodNames(AWS.Lambda));
-        const lambda = new AWS.Lambda();
-        lambda.invoke({legal: 'fodase'});
 
+        console.log(this.service.functions);
+
+        AWS.Lambda.prototype.invoke = function(options) {
+
+            // const functionName = this.service.functions[options['FunctionName']];
+            // console.log(functionName);
+        };
+
+        const lambda = new AWS.Lambda();
     }
 
     getInstanceMethodNames (obj) {
