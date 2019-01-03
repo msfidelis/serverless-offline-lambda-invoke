@@ -1,0 +1,11 @@
+{
+  "name": "serverless-offline-lambda-invoke",
+  "version": "1.0.0",
+  "description": "Invoke lambda functions on AWS SDK with serverless-offline",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matheus Fidelis",
+  "license": "MIT"
+}
